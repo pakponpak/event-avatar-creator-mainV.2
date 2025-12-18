@@ -1,0 +1,11 @@
+{
+    "Name": "WalkAroundFarm",
+    "Author": "Kana",
+    "Version": "1.0.2",
+    "Description": "Aggiunge una Fattoria Personalizzata",
+    "UniqueID": "Kana.WalkAroundFarm",
+    "UpdateKeys": [ "Nexus:39790" ],
+    "ContentPackFor": {
+      "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}

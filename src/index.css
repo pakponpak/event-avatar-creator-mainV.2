@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 30% 5%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 25% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 25% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 220 90% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 90% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 20% 15%;
+    --muted-foreground: 240 10% 60%;
+
+    --accent: 190 90% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100% / 0.2;
+    --input: 240 20% 15%;
+    --ring: 220 90% 50%;
+
+    --radius: 0;
+    /* Boxy */
+
+    --pixel-border: 4px solid #fff;
+    --pixel-font: 'Press Start 2P', system-ui;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-white/20;
+    image-rendering: pixelated;
+    /* Global pixelated rendering */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Press Start 2P', system-ui;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+
+  /* Scanline effect */
+  body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 1000;
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .font-pixel {
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .text-gradient {
+    background: linear-gradient(to bottom, #fff 0%, #aaa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .pixel-border {
+    border: 4px solid #fff;
+    box-shadow:
+      4px 0px 0px 0px #000,
+      -4px 0px 0px 0px #000,
+      0px 4px 0px 0px #000,
+      0px -4px 0px 0px #000;
+  }
+
+  .pixel-card {
+    @apply bg-card border-4 border-white pb-1 pr-1;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .pixel-button {
+    @apply relative inline-block px-4 py-2 bg-primary text-white font-bold uppercase transition-transform active:scale-95;
+    border: 4px solid #000;
+    box-shadow: inset -4px -4px 0px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  .pixel-button-secondary {
+    @apply pixel-button bg-secondary;
+  }
+
+  .pixel-input {
+    @apply bg-white text-black px-3 py-2 border-4 border-black outline-none focus:bg-amber/10;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #fff;
+    border: 2px solid #000;
+  }
+}
+
+/* Animations */
+@keyframes character-idle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-character-idle {
+  animation: character-idle 0.8s steps(4) infinite;
+}
+
+/* Override Radix/UI components for 8-bit look */
+button,
+input,
+select,
+textarea {
+  font-family: 'Press Start 2P', system-ui !important;
+}
+
+[data-radix-popper-content-wrapper] {
+  image-rendering: pixelated;
+}

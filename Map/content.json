@@ -1,0 +1,277 @@
+{
+    "Format": "2.0.0",
+    "CustomLocations": [
+		{
+			"Name": "Custom_WalkAroundFarm",
+			"FromMapFile": "assets/WalkAroundFarm.tmx"
+		},
+		{
+			"Name": "Custom_WalkAroundCave",
+			"FromMapFile": "assets/WalkAroundCave.tmx"
+		}
+    ],
+    "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+		"Entries": {
+		    "Custom_WalkAroundCave": {
+		    "DisplayName": "WalkAroundCave",
+                    "CreateOnLoad": {
+                        "MapPath": "Maps/Custom_WalkAroundCave"
+                    },
+                    "Fish": [
+                            {
+                             "Chance": 0.9,
+                             "Season": null,
+                             "Id": "(O)156",
+                             "ItemId": "(O)156",
+                            },
+                            {
+                             "Chance": 0.9,
+                             "Season": null,
+                             "Id": "(O)157",
+                             "ItemId": "(O)158",
+                            },
+                            {
+                             "Chance": 1.0,
+                             "Season": null,
+                             "Id": "(O)158",
+                             "ItemId": "(O)157",
+                            },
+                            {
+                             "Chance": 0.6,
+                             "Season": null,
+                             "Id": "(O)CaveJelly",
+                             "ItemId": "(O)CaveJelly",
+                            }
+                      ]
+                  }
+              }
+            },
+        // add farm type
+        {
+            "Action": "EditData",
+            "Target": "Data/AdditionalFarms",
+            "Entries": {
+                "Kana.WalkAroundFarm": {
+                    "ID": "Kana.WalkAroundFarm",
+                    "TooltipStringPath": "Strings/UI:Kana_WalkAroundFarm",
+                    "MapName": "WalkAroundFarm",
+                    "IconTexture": "Mods/Kana_WalkAroundFarm/IconLE"
+
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Strings/UI",
+            "Entries": {
+                "Kana_WalkAroundFarm": "{{i18n:farm.name}}"
+            },
+        },
+
+        // load map
+        {
+            "Action": "Load",
+            "Target": "Maps/WalkAroundFarm",
+            "FromFile": "assets/WalkAroundFarm.tmx"
+       
+
+        },
+        {
+            "Action": "Load",
+            "Target": "Mods/Kana_WalkAroundFarm/IconLE",
+            "FromFile": "assets/icon/Icon.png"
+        },
+    {
+      "LogName": "Edit farm location data",
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "Farm_Kana.WalkAroundFarm": {
+          "DisplayName": "[LocalizedText Strings\\StringsFromCSFiles:MapPage.cs.11064 [EscapedText [FarmName]]]",
+          "CanPlantHere": true,
+          "ExcludeFromNpcPathfinding": false,
+          "CreateOnLoad": null,
+          "CanHaveGreenRainSpawns": true,
+          "ArtifactSpots": [
+            {
+              "Chance": 0.5,
+              "ApplyGenerousEnchantment": true,
+              "OneDebrisPerDrop": true,
+              "Precedence": 0,
+              "ContinueOnDrop": false,
+              "Condition": null,
+              "Id": "(O)382",
+              "ItemId": "(O)382",
+              "RandomItemId": null,
+              "MaxItems": null,
+              "MinStack": 1,
+              "MaxStack": 3,
+              "Quality": -1,
+              "ObjectInternalName": null,
+              "ObjectDisplayName": null,
+              "ToolUpgradeLevel": -1,
+              "IsRecipe": false,
+              "StackModifiers": null,
+              "StackModifierMode": 0,
+              "QualityModifiers": null,
+              "QualityModifierMode": 0,
+              "ModData": null,
+              "PerItemCondition": null
+            },
+            {
+              "Chance": 0.1,
+              "ApplyGenerousEnchantment": true,
+              "OneDebrisPerDrop": true,
+              "Precedence": 0,
+              "ContinueOnDrop": false,
+              "Condition": null,
+              "Id": "(O)770",
+              "ItemId": "(O)770",
+              "RandomItemId": null,
+              "MaxItems": null,
+              "MinStack": 1,
+              "MaxStack": 3,
+              "Quality": -1,
+              "ObjectInternalName": null,
+              "ObjectDisplayName": null,
+              "ToolUpgradeLevel": -1,
+              "IsRecipe": false,
+              "StackModifiers": null,
+              "StackModifierMode": 0,
+              "QualityModifiers": null,
+              "QualityModifierMode": 0,
+              "ModData": null,
+              "PerItemCondition": null
+            },
+            {
+              "Chance": 0.25,
+              "ApplyGenerousEnchantment": true,
+              "OneDebrisPerDrop": true,
+              "Precedence": 0,
+              "ContinueOnDrop": false,
+              "Condition": null,
+              "Id": "(O)390",
+              "ItemId": "(O)390",
+              "RandomItemId": null,
+              "MaxItems": null,
+              "MinStack": 1,
+              "MaxStack": 3,
+              "Quality": -1,
+              "ObjectInternalName": null,
+              "ObjectDisplayName": null,
+              "ToolUpgradeLevel": -1,
+              "IsRecipe": false,
+              "StackModifiers": null,
+              "StackModifierMode": 0,
+              "QualityModifiers": null,
+              "QualityModifierMode": 0,
+              "ModData": null,
+              "PerItemCondition": null
+            }
+          ],
+          "FishAreas": {
+            "FiumePond": {
+              "DisplayName": null,
+              "Position": { "X": 0, "Y": 0, "Width": 31, "Height": 42 },
+              "CrabPotFishTypes": ["freshwater"],
+              "CrabPotJunkChance": 0.1
+            },
+            "MarePond": {
+              "DisplayName": null,
+              "Position": { "X": 0, "Y": 45, "Width": 27, "Height": 63 },
+              "CrabPotFishTypes": ["ocean"],
+              "CrabPotJunkChance": 0.2
+            }
+          },
+          "Fish": [
+            {
+        "Chance": 1.0,
+        "Season": null,
+        "FishAreaId": "FiumePond",
+        "BobberPosition": null,
+        "PlayerPosition": null,
+        "MinFishingLevel": 0,
+        "MinDistanceFromShore": 0,
+        "MaxDistanceFromShore": -1,
+        "ApplyDailyLuck": false,
+        "CuriosityLureBuff": -1.0,
+        "CatchLimit": -1,
+        "IsBossFish": false,
+        "SetFlagOnCatch": null,
+        "RequireMagicBait": false,
+        "Precedence": -10,
+        "IgnoreFishDataRequirements": true,
+        "CanBeInherited": true,
+        "ChanceModifiers": null,
+        "ChanceModifierMode": 0,
+        "ChanceBoostPerLuckLevel": 0.0,
+        "UseFishCaughtSeededRandom": false,
+        "Condition": null,
+        "Id": "LOCATION_FISH Town BOBBER_X BOBBER_Y WATER_DEPTH",
+        "ItemId": "LOCATION_FISH Town BOBBER_X BOBBER_Y WATER_DEPTH",
+        "RandomItemId": null,
+        "MaxItems": null,
+        "MinStack": -1,
+        "MaxStack": -1,
+        "Quality": -1,
+        "ObjectInternalName": null,
+        "ObjectDisplayName": null,
+        "ToolUpgradeLevel": -1,
+        "IsRecipe": false,
+        "StackModifiers": null,
+        "StackModifierMode": 0,
+        "QualityModifiers": null,
+        "QualityModifierMode": 0,
+        "ModData": null,
+        "PerItemCondition": null
+      },
+      {
+        "Chance": 1.0,
+        "Season": null,
+        "FishAreaId": "MarePond",
+        "BobberPosition": null,
+        "PlayerPosition": null,
+        "MinFishingLevel": 0,
+        "MinDistanceFromShore": 0,
+        "MaxDistanceFromShore": -1,
+        "ApplyDailyLuck": false,
+        "CuriosityLureBuff": -1.0,
+        "CatchLimit": -1,
+        "IsBossFish": false,
+        "SetFlagOnCatch": null,
+        "RequireMagicBait": false,
+        "Precedence": -10,
+        "IgnoreFishDataRequirements": true,
+        "CanBeInherited": true,
+        "ChanceModifiers": null,
+        "ChanceModifierMode": 0,
+        "ChanceBoostPerLuckLevel": 0.0,
+        "UseFishCaughtSeededRandom": false,
+        "Condition": null,
+        "Id": "LOCATION_FISH Beach BOBBER_X BOBBER_Y WATER_DEPTH",
+        "ItemId": "LOCATION_FISH Beach BOBBER_X BOBBER_Y WATER_DEPTH",
+        "RandomItemId": null,
+        "MaxItems": null,
+        "MinStack": -1,
+        "MaxStack": -1,
+        "Quality": -1,
+        "ObjectInternalName": null,
+        "ObjectDisplayName": null,
+        "ToolUpgradeLevel": -1,
+        "IsRecipe": false,
+        "StackModifiers": null,
+        "StackModifierMode": 0,
+        "QualityModifiers": null,
+        "QualityModifierMode": 0,
+        "ModData": null,
+        "PerItemCondition": null
+      },
+      ]
+      }
+      }
+   }
+   ]
+}
